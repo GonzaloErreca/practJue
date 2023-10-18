@@ -51,24 +51,6 @@ function allCharsOnMisteryWord() {
   return true; // Si recorrió todo el bucle sin encontrar ninguna letra faltante, devuelve true
 }
 
-/*
-//a mejorar
-
-function allCharsOnMisteryWord(palabraOriginal, letrasIngresadas) {
-  let palabraCompleta = false;
-
-  for (var i = 0; i < palabraOriginal.length; i++) {
-    if (!letrasIngresadas.includes(palabraOriginal[i])) {
-      palabraCompleta = false;
-    } else {
-      palabraCompleta = true;
-    }
-
-    return palabraCompleta;
-  }
-}
-
-*/
 
 function compareLetterWithWord() {
 
@@ -102,3 +84,21 @@ function RandomWordGenerator() {
   result = words[Math.floor(Math.random() * words.length)];
   return result;
 }
+/*
+//a mejorar
+
+function allCharsOnMisteryWord(palabraOriginal, letrasIngresadas) {
+  let palabraCompleta = false;
+
+  for (var i = 0; i < palabraOriginal.length; i++) {
+    if (!letrasIngresadas.includes(palabraOriginal[i])) {
+      palabraCompleta = false;
+    } else {
+      palabraCompleta = true;
+    }
+
+    return palabraCompleta;
+  }
+}
+
+*/
