@@ -78,7 +78,7 @@ function checkForMatch() {
   const optionOneId = cardsChosenId[0];
   const optionTwoId = cardsChosenId[1];
   if (cardsChosen[0] === cardsChosen[1]) {
-    alert("Encontraste un match!");
+    alert("Encontraste un par!");
     cards[optionOneId].setAttribute("src", "/MemoryGame/IMG/white.png");
     cards[optionTwoId].setAttribute("src", "/MemoryGame/IMG/white.png");
     cardsWon.push(cardsChosen);
