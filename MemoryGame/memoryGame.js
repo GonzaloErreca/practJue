@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  //card options
+  //arreglo con las 12 cartas
   const cardArray = [
     {
       name: "leaves",
@@ -61,39 +61,19 @@ var cardsWon = [];
 // crear tablero
 cardArray.sort(() => 0.5 - Math.random());
 
-//console.log(cardArray); //probamos que las cartas esten randomized
+//console.log(cardArray); //probemos que las cartas esten randomized
 
 function crearTablero() {
   for (let i = 0; i < cardArray.length; i++) {
     let card = document.createElement("img");
     card.setAttribute("src", "/MemoryGame/Img/blank.png");
     card.setAttribute("data-id", i);
-   // card.addEventListener("click",flipcard)
+    card.addEventListener("click",flipCard)
     grid.appendChild(card);
   }
 }
 
 crearTablero();
-
-//check match
-function checkForMatch() {
-  let cards = document.querySelectorAll("img");
-  const optionOneId = cardsChosenId[0];
-  const optionTwoId = cardsChosenId[1];
-  if (cardsChosen[0] === cardsChosen[1]) {
-    alert("Encontraste un par!");
-    cards[optionOneId].setAttribute("src", "/MemoryGame/Img/white.png");
-    cards[optionTwoId].setAttribute("src", "/MemoryGame/Img/white.png");
-    cardsWon.push(cardsChosen);
-  } else {
-    cards[optionOneId].setAttribute("src", "/MemoryGame/Img/blank");
-    cards[optionTwoId].setAttribute("src", "/MemoryGame/Img/blank");
-    alert("Intentalo otra vez!");
-  }
-
-  cardsChosen = [];
-  cardsChosenId = [];
-}
 
 //dar vuelta la carta
 
@@ -107,4 +87,28 @@ function flipCard(card) {
   }
 }
 
+//chequear el match
+
+function checkForMatch() {
+  let cards = document.querySelectorAll("img");
+  const optionOneId = cardsChosenId[0];
+  const optionTwoId = cardsChosenId[1];
+  if (cardsChosen[0] === cardsChosen[1]) {
+    alert("Encontraste un par!");
+    cards[optionOneId].setAttribute("src", "/MemoryGame/Img/white.png");
+    cards[optionTwoId].setAttribute("src", "/MemoryGame/Img/white.png");
+    cardsWon.push(cardsChosen);
+  } else {
+    cards[optionOneId].setAttribute("src", "/MemoryGame/Img/blank.png");
+    cards[optionTwoId].setAttribute("src", "/MemoryGame/Img/blank.png");
+    alert("Intentalo otra vez!");
+  }
+
+  cardsChosen = [];
+  cardsChosenId = [];
+}
+
 });
+
+
+

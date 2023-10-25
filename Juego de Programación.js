@@ -126,3 +126,4 @@ function RandomWordGenerator() {
       return result;
   }
   
+  //export function
